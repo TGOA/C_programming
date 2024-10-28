@@ -5,7 +5,6 @@
 int main() {
   srand(time(0));
   int n, m;
-  
   printf("Enter the number of samples M: ");
   scanf("%d", &m);
   printf("Enter moving average N: ");
@@ -21,7 +20,8 @@ int main() {
     if (i < n) {
       smoothed_array[i] = original_array[i];
       printf("SpeechOut%d: %d\n", i + 1, original_array[i]);
-    } else {
+    } 
+    else {
       int sum = 0;
       for (int j = 0; j < n; j++) {
         sum += original_array[i - j];
@@ -30,12 +30,10 @@ int main() {
       smoothed_array[i] = avg;
     }
   }
-
   printf("\nOriginal Array: ");
   for (int i = 0; i < m; i++) {
     printf("%d ", original_array[i]);
   }
-  
   printf("\nSmoothed Array: ");
   for (int i = 0; i < m; i++) {
     printf("%d ", smoothed_array[i]);
